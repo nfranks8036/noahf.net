@@ -3,6 +3,7 @@
     overflow: hidden;
     background-color: #ef6c00;
     padding: 20px 10px;
+    font-family: 'Courier New', Courier, monospace;
   }
   
   /* Style the header links */
@@ -35,8 +36,13 @@
     background-color: dodgerblue;
     color: white;
   }
-  
-  .header-center {
+
+  .header a.active:hover {
+    color: rgb(8, 8, 8);
+    background-color: rgb(81, 168, 255);
+  }
+
+  .header-center span.extended {
     display: inline-block;
     color: white;
     text-align: center;
@@ -44,9 +50,13 @@
     padding: 12px;
     text-decoration: none;
     font-size: 36px;
-    line-height: 25px;
+    line-height: 80%;
     border-radius: 4px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+
+  .header-center span.condensed {
+    display: none;
   }
 
   /* Float the link section to the right */
@@ -56,6 +66,27 @@
   
   /* Add media queries for responsiveness - when the screen is 500px wide or less, stack the links on top of each other */
   @media screen and (max-width: 500px) {
+    .header-center span.extended {
+      display: none;
+    }
+
+    .header-center span.condensed {
+      display: inline-block;
+      color: white;
+      text-align: center;
+      vertical-align: top;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 36px;
+      line-height: 80%;
+      border-radius: 4px;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .header img {
+      float: none;
+    }
+
     .header a {
       float: none;
       display: block;
