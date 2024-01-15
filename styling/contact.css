@@ -1,12 +1,12 @@
 .header {
-    width: 307px;
-    height: 130px;
+    width: 460px;
+    height: 195px;
     overflow: hidden;
     position: relative;
 }
 
 :root {
-    --height: 290px;
+    --height: 390px;
 }
 
 .contact {
@@ -15,8 +15,8 @@
     font-family: 'Arial', Courier, monospace;
     background-color: rgba(0, 0, 0, 0.5);
 
-    width: 420px;
-    height: 290px;
+    width: 620px;
+    height: var(--height);
     border-radius: 5px;
     position: fixed;
     top: 50%;
@@ -26,14 +26,15 @@
 }
 
 .subheading {
-    -webkit-text-stroke: 1px black;
+    -webkit-text-stroke: 4px black;
     opacity: 96%;
+    paint-order: stroke fill;
 }
 
 .social-media {
-    height: 64px;
-    width: 64px;
-    margin: 0px 3px 0px 3px;
+    height: 96px;
+    width: 96px;
+    margin: 0px 4.5px 0px 4.5px;
     transition: all 0.25s ease-out;
 }
 
@@ -53,15 +54,15 @@
 
     .header {
         display: block;
-        top: 25%;
+        top: 5%;
         margin-left: auto;
         margin-right: auto;
-        scale: 0.75;
+        scale: 0.8;
     }    
 
     .subheading {
         position: fixed;
-        top: 46%;
+        top: 40%;
         left: 50%;
         transform: translate(-50%, 0%);
     }
@@ -69,11 +70,12 @@
     .social-media-container {
         display: inline-block;
         vertical-align: top;
-        padding: 0% 30% 0% 30%;
+        padding: 0% 20% 0% 20%;
         position: fixed;
         left: 0%;
         top: 55%;
         vertical-align: top;
+        transition: all 0.25s ease-out;
     }
 
     .contact {

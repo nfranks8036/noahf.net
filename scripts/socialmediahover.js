@@ -60,7 +60,7 @@ function getOtherElements(affected) {
 function executeListener(useZero, event) {
     let affected = event.target;
     if (affected.classList.contains('social-media')) {
-        affected.style.transform = 'scale(' + (useZero ? 1 : (isDefaultExpansion() ? 2 : 1.25)) + ') ' + (isDefaultExpansion() ? 'translateY(' + (useZero ? 0 : 10) + 'px)' : '');
+        affected.style.transform = 'scale(' + (useZero ? 1 : (isDefaultExpansion() ? 1.75 : 1.25)) + ') ' + (isDefaultExpansion() ? 'translateY(' + (useZero ? 0 : 15) + 'px)' : '');
 
         /**
          * Make twitter icon appear suddenly and only for .3s (an ode to what X should be called)
@@ -86,7 +86,7 @@ function executeListener(useZero, event) {
         }
     }
 
-    editWindow(useZero ? 0 : isDefaultExpansion() ? "332px" : "100%");
+    editWindow(useZero ? 0 : isDefaultExpansion() ? "455px" : "100%");
 }
 
 window.onresize = function() {
