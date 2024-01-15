@@ -12,7 +12,7 @@ addIcon("\\assets\\icons\\socials\\x.png", "https://x.com/noahf8036")
 addIcon("\\assets\\icons\\manie-musicale-logo-large.png", "https://mm.od.noahf.net/")
 
 function isDefaultExpansion() {
-    return window.innerWidth > 600
+    return window.innerWidth > 700;
 }
 
 function isFormerlyTwitter(element) {
@@ -31,6 +31,13 @@ function addIcon(image, link) {
 
     socialMediaIcons.appendChild(icon)
     orderAdded.set(current++, icon)
+}
+
+function editWindow(newSizeElseZero = 0) {
+    let size = (newSizeElseZero == 0 ? getComputedStyle(document.documentElement).getPropertyValue("--height") : newSizeElseZero);
+    
+    element = document.getElementById("contact");
+    element.style.height = size;
 }
 
 function getOtherElements(affected) {
@@ -55,14 +62,16 @@ function executeListener(useZero, event) {
     if (affected.classList.contains('social-media')) {
         affected.style.transform = 'scale(' + (useZero ? 1 : (isDefaultExpansion() ? 2 : 1.25)) + ') ' + (isDefaultExpansion() ? 'translateY(' + (useZero ? 0 : 10) + 'px)' : '');
 
+        /**
+         * Make twitter icon appear suddenly and only for .3s (an ode to what X should be called)
+         */
         if (isFormerlyTwitter(affected)) {
             tasks.push(setTimeout(function() {
-                if (!affected.matches(":hover")) return;
                 affected.src = "\\assets\\icons\\socials\\twitter.png";
                 setTimeout(function () {
                     affected.src = "\\assets\\icons\\socials\\x.png";
-                }, 100);
-            }, 1500));
+                }, 300);
+            }, 1000));
         }
     }
 
@@ -75,10 +84,13 @@ function executeListener(useZero, event) {
             let element = elements[i]
             element.style.transform = 'translateX(' + (useZero ? 0 : i < position ? 0 - moveAmount : moveAmount) + 'px)'
         }
-
-        element = document.getElementById("contact");
-        element.style.height = (useZero ? "290px" : "332px")
     }
+
+    editWindow(useZero ? 0 : isDefaultExpansion() ? "332px" : "100%");
+}
+
+window.onresize = function() {
+    editWindow();
 }
 
 socialMediaIcons.addEventListener('mouseover', (event) => {
