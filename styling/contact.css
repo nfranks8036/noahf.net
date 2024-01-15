@@ -42,13 +42,12 @@
     justify-content: center;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 900px) {
     .header {
-        position: absolute;
+        display: block;
         top: 25%;
-        margin: auto;
-        left: 65%;
-        transform: translate(-100%);
+        margin-left: auto;
+        margin-right: auto;
         scale: 0.75;
     }    
 
