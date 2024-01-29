@@ -1,8 +1,23 @@
+html,
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: black;
+    opacity: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-  color: #00B7FF;
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.background {
+    height: 100%;
+    width: 100%;
+    opacity: 60%;
+    background-image: linear-gradient(135deg, rgb(255, 170, 0) 0%, rgb(255, 38, 0) 100%);
 }

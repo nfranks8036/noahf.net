@@ -1,15 +1,15 @@
+import { SocialsList as SocialsList } from "../src/socialslist.js";
 const socialMediaIcons = document.getElementById("socialMediaContainer")
 const orderAdded = new Map();
 const moveAmount = 25
+const socials = new SocialsList().socials;
 
 let current = 0;
 let tasks = [];
 
-addIcon("\\assets\\icons\\socials\\gmail.png", "mailto:nfranks8036@gmail.com")
-addIcon("\\assets\\icons\\socials\\youtube.png", "https://www.youtube.com/@noah.f")
-addIcon("\\assets\\icons\\socials\\instagram.webp", "https://www.instagram.com/noahf8036/")
-addIcon("\\assets\\icons\\socials\\x.png", "https://x.com/noahf8036")
-addIcon("\\assets\\icons\\manie-musicale-logo-large.png", "https://mm.od.noahf.net/")
+for (var key in socials) {
+    addIcon(key, socials[key].image, socials[key].redirect);
+}
 
 function isDefaultExpansion() {
     return window.innerWidth > 700;
@@ -19,7 +19,7 @@ function isFormerlyTwitter(element) {
     return element.outerHTML.toString().includes("x.png");
 }
 
-function addIcon(image, link) {
+function addIcon(name, image, link) {
     const icon = document.createElement('img');
 
     icon.className = "social-media";
@@ -36,7 +36,7 @@ function addIcon(image, link) {
 function editWindow(newSizeElseZero = 0) {
     let size = (newSizeElseZero == 0 ? getComputedStyle(document.documentElement).getPropertyValue("--height") : newSizeElseZero);
     
-    element = document.getElementById("contact");
+    let element = document.getElementById("contact");
     element.style.height = size;
 }
 
