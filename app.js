@@ -8,7 +8,7 @@ app.get('/', (req, res, next) => {
     res.render("main")
 });
 
-app.get('/school/day', (req, res, next) => {
+app.get('/school/days', (req, res, next) => {
     res.render("schooldaycalculator")
 })
 
@@ -18,5 +18,5 @@ function addSocial(url, name) {
     });
 }
 
-app.listen(5500);
+app.listen(5000);
 module.exports = app;

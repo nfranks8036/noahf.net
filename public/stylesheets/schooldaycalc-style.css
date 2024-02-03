@@ -1,3 +1,8 @@
 body {
-    background-color: black;
+    color: white;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    font-size: 70px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
